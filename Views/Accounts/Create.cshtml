@@ -1,0 +1,19 @@
+﻿@model StokTakipProjesi2.Models.User
+
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Yeni Hesap Oluştur</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StokTakipProjesi2.styles.css" asp-append-version="true" />
+    </head>
+    <body>
+        <div>
+            <label>@Model.Username</label>
+            <a class="btn btn-primary" asp-action="Logout" asp-controller="Accounts">
+                Log out
+            </a>
+        </div>
+    </body>
+</html>

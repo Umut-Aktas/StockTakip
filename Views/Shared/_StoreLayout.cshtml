@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Stock Track</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StokTakipProjesi2.styles.css" asp-append-version="true" />
+
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light border border-2">
+            <div class="container d-flex align-items-center justify-content-between">
+                <h2 class="mb-0">Stok Takip Projesi</h2>
+                <div class="d-flex align-items-center gap-2">
+                    <a asp-controller="Store" asp-action="Dashboard" class="btn btn-secondary">Dashboard</a>
+                    <a asp-controller="Store" asp-action="Create" class="btn btn-secondary">Add Stock</a>
+                    <a asp-controller="Accounts" asp-action="Logout" class="btn btn-danger">Log out</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Stok Takip
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

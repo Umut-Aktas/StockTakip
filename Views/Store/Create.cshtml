@@ -1,0 +1,45 @@
+﻿@model StokTakipProjesi2.Models.Stock
+
+<form asp-action="Create" method="post" class="container mt-4" style="max-width: 900px;">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="mb-4">Create New Stock Record</h2>
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <input asp-for="Owner" type="hidden" value="@User.Identity.Name" />
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Category" class="form-label"></label>
+                    <input asp-for="Category" class="form-control" placeholder="Category (optional)" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" rows="3" class="form-control" placeholder="Product description (optional)"></textarea>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <label asp-for="StockCount" class="form-label"></label>
+                    <input asp-for="StockCount" type="number" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Price" class="form-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-text">₺</span>
+                        <input asp-for="Price" type="number" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <a asp-action="Dashboard" asp-controller="Store" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to List
+                </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-save"></i> Save
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

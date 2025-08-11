@@ -1,0 +1,40 @@
+﻿ @model StokTakipProjesi2.Models.User
+
+    @{
+        ViewData["Title"] = "Login";
+    }
+
+    @section Scripts {
+        <script>
+            console.log("@ViewBag.Message");
+        </script>
+    }
+
+
+    <div class="container d-flex min-vh-100 justify-content-center align-items-start mt-5">
+        <div class="justify-content-center align-items-center border border-2 p-3 mt-5">
+            <h4 class="text-center mb-4">Please Login Your Account</h4>
+            <form asp-action="Login" asp-controller="Accounts" method="post" style="min-width:324px;">
+            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+                <div class="mb-3">
+                    <label asp-for="Username" class="form-label"></label>
+                    <input asp-for="Username" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control"/>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" asp-for="isRemembered" />
+                    <label class="form-check-label" asp-for="isRemembered">Remember me</label>
+                </div>
+                <div class="mb-3">
+                    <span class="text-muted">Don’t have an account?</span>
+                    <a asp-action="Register" class="text-decoration-none">Register here</a>
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>

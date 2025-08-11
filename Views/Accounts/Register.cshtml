@@ -1,0 +1,46 @@
+﻿    @model StokTakipProjesi2.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+@section Scripts {
+    <script>
+        console.log("@ViewBag.Message");
+    </script>
+}
+
+
+<div class="container d-flex min-vh-100 justify-content-center align-items-start mt-5">
+    <div class="justify-content-center align-items-center border border-2 p-3 mt-5">
+        <h4 class="text-center mb-4">Please Signup Your Account</h4>
+        <form asp-action="Register" asp-controller="Accounts" method="post" style="min-width:324px;">
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Role" class="form-label">Select Role</label>
+                <select asp-for="Role" class="form-select">
+                    <option value="Store">Store</option>
+                    <option value="Customer">Customer</option>
+                </select>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" asp-for="isRemembered" />
+                <label class="form-check-label" asp-for="isRemembered">Remember me</label>
+            </div>
+            <div class="mb-3">
+                <span class="text-muted">Do you have a account?</span>
+                <a asp-action="Login" class="text-decoration-none">Login here</a>
+            </div>
+            <div class="text-end">
+                <button asp-route="Username" asp-route="Password" asp-route="Role" class="btn btn-primary">Signup</button>
+            </div>
+        </form>
+    </div>
+</div>

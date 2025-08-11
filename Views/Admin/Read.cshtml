@@ -1,0 +1,60 @@
+﻿@model StokTakipProjesi2.Models.Stock
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="container my-4">
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle">
+            <tbody>
+                <tr>
+                    <th style="width: 18%;">Product Name</th>
+                    <td style="width: 32%;">@Model.Name</td>
+                    <th style="width: 18%;">Category</th>
+                    <td style="width: 32%;">
+                        <span class="badge bg-info text-dark px-3 py-2 rounded-pill">@Model.Category</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td colspan="3">@Model.Description</td>
+                </tr>
+                <tr>
+                    <th>Quantity</th>
+                    <td>@Model.StockCount</td>
+                    <th>Unit Price</th>
+                    <td>@Model.Price.ToString("N2")₺</td>
+                </tr>
+                <tr>
+                    <th>Total Value</th>
+                    <td>@(Model.Price * Model.StockCount)₺</td>
+                </tr>
+                <tr>
+                    <th>Stock Status</th>
+                    <td>
+                        @if (Model.StockCount <= 2)
+                        {
+                            <span class="badge bg-danger px-3 py-2">Critical</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-success px-3 py-2">In Stock</span>
+                        }
+                    </td>
+                    <th>Last Update</th>
+                    <td>@Model.UpdatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+                <tr>
+                    <th>Creation Date</th>
+                    <td>@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <th>Other Details (future)</th> 
+                    <td colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@using StokTakipProjesi2.Controllers;
+@Model;
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<div class="container my-5">
+    <div class="card shadow-sm mx-auto" style="max-width: 400px;">
+        <div class="card-body">
+            <h4 class="card-title mb-3">Delete Product</h4>
+            <p>
+                <strong>Product Name:</strong> <span class="text-primary">@Model.Name</span><br>
+                <strong>Stock:</strong> <span class="text-success">@Model.StockCount</span>
+            </p>
+            <div class="alert alert-warning my-4" role="alert">
+                Are you sure you want to delete this product?
+            </div>
+            <div class="d-flex justify-content-between">
+                <form asp-action="DeleteConfirmed" asp-controller="Admin" asp-route-id="@Model.StockID" method="post">
+                    <button type="submit" class="btn btn-danger w-45">Yes</button>
+                </form>
+                <a class="btn btn-secondary w-45" asp-action="Dashboard" asp-controller="Admin">No</a>
+            </div>
+        </div>
+    </div>
+</div>

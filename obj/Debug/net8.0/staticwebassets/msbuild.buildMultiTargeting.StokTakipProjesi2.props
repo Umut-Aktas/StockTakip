@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\StokTakipProjesi2.props" />
+</Project>
